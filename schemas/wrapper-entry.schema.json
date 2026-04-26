@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/qontinui/wrappers-registry/main/schemas/wrapper-entry.schema.json",
+  "$id": "https://raw.githubusercontent.com/jspinak/wrappers-registry/main/schemas/wrapper-entry.schema.json",
   "title": "Wrapper registry entry",
   "description": "A single entry in registry.json's `wrappers[]` array.",
   "type": "object",
