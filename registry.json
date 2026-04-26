@@ -1,0 +1,31 @@
+{
+  "manifestVersion": 1,
+  "wrappers": [
+    {
+      "id": "v0",
+      "package": "@qontinui/wrapper-v0",
+      "version": ">=0.1.0",
+      "displayName": "Vercel v0",
+      "description": "Generate React components with Vercel v0 from a natural-language prompt",
+      "categories": ["ai", "frontend"],
+      "transport": "api",
+      "author": { "name": "qontinui", "url": "https://github.com/qontinui" },
+      "repo": "https://github.com/qontinui/qontinui-wrappers/tree/main/packages/wrapper-v0",
+      "license": "MIT",
+      "verified": true
+    },
+    {
+      "id": "gmail",
+      "package": "@qontinui/wrapper-gmail",
+      "version": ">=0.1.0",
+      "displayName": "Gmail",
+      "description": "Read, search, and send Gmail messages on behalf of an authenticated account",
+      "categories": ["productivity", "communication"],
+      "transport": "api",
+      "author": { "name": "qontinui", "url": "https://github.com/qontinui" },
+      "repo": "https://github.com/qontinui/qontinui-wrappers/tree/main/packages/wrapper-gmail",
+      "license": "MIT",
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+name: validate
+
+on:
+  pull_request:
+    paths:
+      - "registry.json"
+      - "schemas/**"
+      - "validator/**"
+      - ".github/workflows/validate.yml"
+  push:
+    branches: [main]
+    paths:
+      - "registry.json"
+      - "schemas/**"
+      - "validator/**"
+      - ".github/workflows/validate.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install validator deps
+        working-directory: validator
+        run: npm install --no-audit --no-fund
+
+      - name: Run validator
+        run: node validator/validate.mjs

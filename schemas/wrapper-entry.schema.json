@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/qontinui/wrappers-registry/main/schemas/wrapper-entry.schema.json",
+  "title": "Wrapper registry entry",
+  "description": "A single entry in registry.json's `wrappers[]` array.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "package",
+    "version",
+    "displayName",
+    "description",
+    "categories",
+    "transport",
+    "author",
+    "repo",
+    "license"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable, lowercase, kebab-case identifier. Must match the `qontinui.wrapper.id` in the wrapper's package.json.",
+      "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
+      "minLength": 2,
+      "maxLength": 64
+    },
+    "package": {
+      "type": "string",
+      "description": "Published npm package name. Scoped (`@scope/name`) or unscoped.",
+      "minLength": 1,
+      "maxLength": 214
+    },
+    "version": {
+      "type": "string",
+      "description": "Semver range the runner should accept (e.g. `>=0.1.0`, `^1.2.0`).",
+      "minLength": 1
+    },
+    "displayName": {
+      "type": "string",
+      "description": "Human-readable name shown in Browse and Installed tabs.",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "description": {
+      "type": "string",
+      "description": "One-line description shown in Browse listing.",
+      "minLength": 1,
+      "maxLength": 280
+    },
+    "categories": {
+      "type": "array",
+      "description": "Free-form category tags used for filtering in Browse.",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    },
+    "transport": {
+      "type": "string",
+      "description": "Transport this wrapper uses. The runner currently only enables `api`; the others are reserved for forward compatibility.",
+      "enum": ["api", "headless", "headed", "live"]
+    },
+    "author": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri" },
+        "email": { "type": "string", "format": "email" }
+      }
+    },
+    "repo": {
+      "type": "string",
+      "description": "Source repository URL.",
+      "format": "uri"
+    },
+    "license": {
+      "type": "string",
+      "description": "SPDX license identifier (e.g. `MIT`, `Apache-2.0`).",
+      "minLength": 1
+    },
+    "verified": {
+      "type": "boolean",
+      "description": "True if the qontinui maintainers have audited this wrapper. Defaults to false; the badge is granted by maintainers, not self-declared.",
+      "default": false
+    }
+  }
+}

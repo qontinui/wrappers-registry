@@ -1,0 +1,14 @@
+{
+  "name": "@qontinui/wrappers-registry-validator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Validates registry.json against schemas/wrapper-entry.schema.json",
+  "type": "module",
+  "scripts": {
+    "validate": "node validate.mjs"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}
