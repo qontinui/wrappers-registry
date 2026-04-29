@@ -101,7 +101,7 @@ understands, so old runners stay safe.
 
 ## License
 
-The contents of this repo (the index, schema, and tooling) are MIT.
+The contents of this repo (the index, schema, and tooling) are licensed under the GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later). See [LICENSE](LICENSE) for full terms.
 Individual wrappers carry their own licenses — see each entry's `license`
 field and the wrapper's repo.
 
